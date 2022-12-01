@@ -1,12 +1,27 @@
 <mat-expansion-panel hideToggle>
   <mat-expansion-panel-header>
     <mat-panel-title>
-      {{ title }}
+      {{ this.task.title }}
     </mat-panel-title>
   </mat-expansion-panel-header>
   <ul>
-    <li><b>Descrição:</b> {{ description}}</li>
-    <li><b>Data Limite:</b> {{ dueDate }}</li>
-    <li><b>Status:</b> {{ status }}</li>
+    <li><b>Descrição:</b> {{ this.task.description}}</li>
+    <li><b>Data Limite:</b> {{ this.task.dueDate }}</li>
+    <li><b>Status:</b> {{ this.task.status }}</li>
   </ul>
 </mat-expansion-panel>
+
+
+<!-- Versão com possível undefined -->
+<!-- <mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{ this.task?.title }}
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <ul>
+    <li><b>Descrição:</b> {{ this.task?.description}}</li>
+    <li><b>Data Limite:</b> {{ this.task?.dueDate }}</li>
+    <li><b>Status:</b> {{ this.task?.status }}</li>
+  </ul>
+</mat-expansion-panel> -->

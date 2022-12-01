@@ -1,8 +1,8 @@
 <mat-accordion>
-  <app-task-item tit="Lavar a louça"></app-task-item>
-  <app-task-item tit="Fazer exercícios do Módulo de Angular"></app-task-item>
-  <app-task-item tit="Passear com o cachorro"></app-task-item>
-  <app-task-item tit="Fazer o planejamento do dia seguinte"></app-task-item>
+  <app-task-item *ngFor="let task of taskList" [task]="task"></app-task-item>
+  <!-- <app-task-item [task]="taskList[1]"></app-task-item>
+  <app-task-item [task]="taskList[2]"></app-task-item>
+  <app-task-item [task]="taskList[3]"></app-task-item> -->
 </mat-accordion>
 
 <!-- <ul>
