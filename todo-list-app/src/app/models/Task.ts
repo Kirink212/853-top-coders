@@ -1,6 +1,6 @@
 export default interface Task {
   title: string;
-  description: string;
+  description?: string;
   dueDate: Date;
   status: boolean;
 }

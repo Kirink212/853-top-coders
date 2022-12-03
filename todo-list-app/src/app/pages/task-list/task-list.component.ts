@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import Task from 'src/app/models/Task';
 
 @Component({
@@ -6,13 +6,13 @@ import Task from 'src/app/models/Task';
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
-export class TaskListComponent {
+export class TaskListComponent implements OnInit, OnChanges {
   taskList: Task[] = [
     {
       title: "Lavar a louça",
-      description: "Pior tarefa da vida",
+      /* description: "Pior tarefa da vida", */
       dueDate: new Date(),
-      status: false
+      status: true
     },
     {
       title: "Fazer exercícios do Módulo de Angular",
@@ -33,4 +33,12 @@ export class TaskListComponent {
       status: false
     }
   ];
+
+  ngOnInit(): void {
+    console.log("Task List was born!");
+  }
+
+  ngOnChanges():void {
+    console.log("Task List has changed!");
+  }
 }
