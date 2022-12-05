@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from './../material/material.module';
 
 import { HeaderComponent } from './header/header.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent
