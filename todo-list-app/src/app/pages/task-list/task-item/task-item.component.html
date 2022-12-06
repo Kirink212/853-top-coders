@@ -1,18 +1,21 @@
-<mat-expansion-panel hideToggle *ngIf="task" [ngStyle]="{ backgroundColor: getColor() }">
+<mat-expansion-panel hideToggle *ngIf="task" [taskDirective]="task.status">
   <mat-expansion-panel-header>
     <!-- <mat-panel-title [class]="task.status? 'completed' : '' "> -->
-    <mat-panel-title [ngClass]="{ 'completed' : task.status }">
-      <mat-checkbox [checked]="task.status" (change)="changeStatus()"></mat-checkbox>
+    <mat-panel-title [ngClass]="{ completed: task.status }">
+      <mat-checkbox
+        [checked]="task.status"
+        (change)="changeStatus()"
+      ></mat-checkbox>
       {{ task.title }}
     </mat-panel-title>
   </mat-expansion-panel-header>
   <ul>
-    <li *ngIf="task.description"><b>Descrição:</b> {{ task.description}}</li>
-    <li><b>Data Limite:</b> {{ task.dueDate }}</li>
-    <li><b>Status:</b> {{ task.status }}</li>
+    <li *ngIf="task.description"><b>Descrição:</b> {{ task.description }}</li>
+    <li><b>Data Limite:</b> {{ task.dueDate | date : "dd/MM/yyyy" }}</li>
+
+    <li><b>Status:</b> {{ task.status | status }}</li>
   </ul>
 </mat-expansion-panel>
-
 
 <!-- Versão com possível undefined -->
 <!-- <mat-expansion-panel hideToggle>

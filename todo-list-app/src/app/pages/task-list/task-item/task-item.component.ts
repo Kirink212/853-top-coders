@@ -5,9 +5,9 @@ import Task from 'src/app/models/Task';
 @Component({
   selector: 'app-task-item',
   templateUrl: './task-item.component.html',
-  styleUrls: ['./task-item.component.css']
+  styleUrls: ['./task-item.component.css'],
 })
-export class TaskItemComponent implements OnChanges{
+export class TaskItemComponent implements OnChanges {
   // @Input("tit") title: string = "Tarefa Não Especificada";
   // description: string = "Sem descrição";
   // dueDate: Date = new Date();
@@ -35,10 +35,10 @@ export class TaskItemComponent implements OnChanges{
   }
 
   getColor(): string {
-    return this.task?.status? "#32a852": "";
+    return this.task?.status ? '#32a852' : '';
   }
 
   ngOnChanges(): void {
-    console.log("Task List Item has changed!");
+    console.log('Task List Item has changed!');
   }
 }
