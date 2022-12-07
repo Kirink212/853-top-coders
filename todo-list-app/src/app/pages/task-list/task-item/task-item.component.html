@@ -5,6 +5,7 @@
       <mat-checkbox
         [checked]="task.status"
         (change)="changeStatus()"
+        (click)="$event.stopPropagation()"
       ></mat-checkbox>
       {{ task.title }}
     </mat-panel-title>
