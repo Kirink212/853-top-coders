@@ -1,1 +1,64 @@
-<p>task-create works!</p>
+<form *ngIf="taskForm" [formGroup]="taskForm" (ngSubmit)="onSubmitForm()">
+  <div>
+    <label for="title">Título</label><br>
+    <input id="title" formControlName="title" required />
+  </div>
+
+  <div>
+    <label for="description">Descrição</label><br>
+    <input id="description" formControlName="description" required />
+  </div>
+
+  <div>
+    <label for="dueDate">Data de Entrega</label><br>
+    <input id="dueDate" formControlName="dueDate" required />
+  </div>
+
+  <div>
+    <input type="checkbox" id="status" formControlName="status" required />
+    <label for="status">Concluída</label>
+  </div>
+
+  <button type="submit">Criar Nova Tarefa</button>
+
+  <!-- <mat-form-field [formControl]="this.titleControl" appearance="fill">
+    <mat-label>Título</mat-label>
+    <input matInput name="title">
+  </mat-form-field>
+
+  <mat-form-field [formControl]="this.descrControl" appearance="fill">
+    <mat-label>Descrição</mat-label>
+    <input matInput name="description">
+  </mat-form-field>
+
+  <mat-form-field [formControl]="this.dueDateControl" appearance="fill">
+    <mat-label>Data Limite para Conclusão</mat-label>
+    <input matInput name="dueDate">
+  </mat-form-field> -->
+
+  <!-- <mat-checkbox [formControl]="this.statusControl">Completada</mat-checkbox> -->
+
+
+  <!-- <input id="title" name="title" [value]="newTask.title" (input)="onInputChange($event)" required /> -->
+  <!-- <div>
+    <label for="title">Título</label><br>
+    <input id="title" name="title" [(ngModel)]="newTask.title" required />
+  </div>
+
+  <div>
+    <label for="description">Descrição</label><br>
+    <input id="description" [(ngModel)]="newTask.description" name="description" required />
+  </div>
+
+  <div>
+    <label for="dueDate">Data de Entrega</label><br>
+    <input id="dueDate" [(ngModel)]="newTask.dueDate" name="dueDate" required />
+  </div>
+
+  <div>
+    <input type="checkbox" id="status" [(ngModel)]="newTask.status" name="status" required />
+    <label for="status">Concluída</label>
+  </div>
+
+  <button type="submit">Criar Nova Tarefa</button> -->
+</form>
