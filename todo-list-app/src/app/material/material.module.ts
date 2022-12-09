@@ -7,7 +7,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+// import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [],
@@ -21,6 +22,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatMenuModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatInputModule
     // MatDatepickerModule
   ]
 })

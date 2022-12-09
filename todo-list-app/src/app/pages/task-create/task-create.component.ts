@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
+import { TaskService } from './../../services/task.service';
+
 import Task from 'src/app/models/Task';
 
 @Component({
@@ -12,6 +14,8 @@ export class TaskCreateComponent {
   newTask: Task = new Task("Nova Tarefa");
 
   taskForm?: FormGroup;
+
+  constructor(private taskService: TaskService) {}
 
   ngOnInit() {
     this.taskForm = new FormGroup({
@@ -39,6 +43,8 @@ export class TaskCreateComponent {
 
     this.newTask = this.taskForm?.value;
 
-    console.log(this.newTask);
+    this.taskService.postTask(this.newTask);
+
+    console.log(this.newTask.id);
   }
 }

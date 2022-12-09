@@ -1,5 +1,5 @@
-<form *ngIf="taskForm" [formGroup]="taskForm" (ngSubmit)="onSubmitForm()">
-  <div>
+<form class="task-form" *ngIf="taskForm" [formGroup]="taskForm" (ngSubmit)="onSubmitForm()">
+  <!-- <div>
     <label for="title">Título</label><br>
     <input id="title" formControlName="title" required />
   </div>
@@ -19,25 +19,29 @@
     <label for="status">Concluída</label>
   </div>
 
-  <button type="submit">Criar Nova Tarefa</button>
+  <button type="submit">Criar Nova Tarefa</button> -->
 
-  <!-- <mat-form-field [formControl]="this.titleControl" appearance="fill">
+
+  <mat-form-field class="full-width" appearance="fill">
     <mat-label>Título</mat-label>
-    <input matInput name="title">
+    <input matInput formControlName="title">
   </mat-form-field>
 
-  <mat-form-field [formControl]="this.descrControl" appearance="fill">
+  <mat-form-field class="full-width" appearance="fill">
     <mat-label>Descrição</mat-label>
-    <input matInput name="description">
+    <input matInput formControlName="description">
   </mat-form-field>
 
-  <mat-form-field [formControl]="this.dueDateControl" appearance="fill">
+  <mat-form-field class="full-width" appearance="fill">
     <mat-label>Data Limite para Conclusão</mat-label>
-    <input matInput name="dueDate">
-  </mat-form-field> -->
+    <input matInput formControlName="dueDate">
+  </mat-form-field>
 
-  <!-- <mat-checkbox [formControl]="this.statusControl">Completada</mat-checkbox> -->
+  <div>
+    <mat-checkbox formControlName="status">Completada</mat-checkbox>
+  </div>
 
+  <button class="submit-btn" mat-stroked-button color="primary" type="submit">Criar Nova Tarefa</button>
 
   <!-- <input id="title" name="title" [value]="newTask.title" (input)="onInputChange($event)" required /> -->
   <!-- <div>

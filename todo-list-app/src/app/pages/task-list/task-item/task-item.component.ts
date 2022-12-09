@@ -30,6 +30,10 @@ export class TaskItemComponent implements OnChanges {
     // this.task.status = false;
   }
 
+  ngOnInit() {
+    console.log(`Task List Item com id = ${this.task?.id}!`);
+  }
+
   changeStatus(): void {
     if (this.task) this.task.status = !this.task?.status;
   }
