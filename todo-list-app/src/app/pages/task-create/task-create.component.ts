@@ -41,10 +41,10 @@ export class TaskCreateComponent {
       status: this.taskForm?.controls['status'].value
     })
 
-    this.newTask = this.taskForm?.value;
+    this.newTask = {id: this.newTask.id, ...this.taskForm?.value};
 
     this.taskService.postTask(this.newTask);
 
-    console.log(this.newTask.id);
+    // console.log(this.newTask.id);
   }
 }

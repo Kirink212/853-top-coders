@@ -16,6 +16,8 @@
 
     <li><b>Status:</b> {{ task.status | status }}</li>
   </ul>
+  <button mat-raised-button color="primary">Atualizar</button>
+  <button mat-raised-button color="warn" (click)="deleteItem()">Remover</button>
 </mat-expansion-panel>
 
 <!-- Versão com possível undefined -->

@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 
+import { TaskService } from './../../../services/task.service';
 import Task from 'src/app/models/Task';
 
 @Component({
@@ -23,7 +24,7 @@ export class TaskItemComponent implements OnChanges {
     status: false
   }; */
 
-  constructor() {
+  constructor(private taskService: TaskService) {
     // this.task.title = "Tarefa Não Especificada";
     // this.task.description = "Sem descrição";
     // this.task.dueDate = new Date();
@@ -40,6 +41,10 @@ export class TaskItemComponent implements OnChanges {
 
   getColor(): string {
     return this.task?.status ? '#32a852' : '';
+  }
+
+  deleteItem() {
+    if (this.task) this.taskService.deleteTask(this.task.id);
   }
 
   ngOnChanges(): void {

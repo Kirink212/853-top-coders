@@ -18,7 +18,6 @@ export default class Task {
 
   static updateLastId(id?: number): number {
     // this.lastId = id?? this.lastId + 1;
-    this.lastId ++;
-    return this.lastId;
+    return ++this.lastId;
   }
 }
