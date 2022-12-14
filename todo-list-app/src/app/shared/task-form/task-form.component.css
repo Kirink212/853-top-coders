@@ -1,0 +1,17 @@
+.task-form {
+  display: flex;
+  /* min-width: 150px;
+  max-width: 500px; */
+  /* width: 100%; */
+  justify-content: center;
+  flex-direction: column;
+  margin: 50px 200px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.submit-btn {
+  max-width: 200px;
+}

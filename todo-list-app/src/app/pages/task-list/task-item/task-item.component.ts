@@ -1,4 +1,5 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, TemplateRef, ViewChild } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 import { TaskService } from './../../../services/task.service';
 import Task from 'src/app/models/Task';
@@ -16,6 +17,7 @@ export class TaskItemComponent implements OnChanges {
 
   // Versão com possível undefined
   @Input() task?: Task;
+  @ViewChild('dialogTemplate') dialogTemplate?: TemplateRef<any>;
 
   /* @Input() task: Task = {
     title: "Tarefa Não Especificada",
@@ -24,7 +26,7 @@ export class TaskItemComponent implements OnChanges {
     status: false
   }; */
 
-  constructor(private taskService: TaskService) {
+  constructor(private taskService: TaskService, private dialog: MatDialog) {
     // this.task.title = "Tarefa Não Especificada";
     // this.task.description = "Sem descrição";
     // this.task.dueDate = new Date();
@@ -45,6 +47,14 @@ export class TaskItemComponent implements OnChanges {
 
   deleteItem() {
     if (this.task) this.taskService.deleteTask(this.task.id);
+  }
+
+  openDialog() {
+    if (this.dialogTemplate) {
+      this.dialog.open(this.dialogTemplate, {
+        data: { title: "Atualizar Tarefa" }
+      });
+    }
   }
 
   ngOnChanges(): void {

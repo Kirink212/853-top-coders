@@ -51,8 +51,9 @@ export class TaskService {
     this.taskList.push(newTask);
   }
 
-  updateTask() {
-
+  updateTask(id: number, updatedTask: Task) {
+    const index = this.taskList.findIndex((task)=> task.id == id);
+    this.taskList[index] = updatedTask;
   }
 
   deleteTask(id: number) {

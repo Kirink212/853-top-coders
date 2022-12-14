@@ -16,8 +16,14 @@
 
     <li><b>Status:</b> {{ task.status | status }}</li>
   </ul>
-  <button mat-raised-button color="primary">Atualizar</button>
+  <button mat-raised-button color="primary" (click)="openDialog()">Atualizar</button>
   <button mat-raised-button color="warn" (click)="deleteItem()">Remover</button>
+
+  <ng-template #dialogTemplate>
+    <app-dialog>
+      <app-task-form requestType="update" [newTask]="task" ></app-task-form>
+    </app-dialog>
+  </ng-template>
 </mat-expansion-panel>
 
 <!-- Versão com possível undefined -->
